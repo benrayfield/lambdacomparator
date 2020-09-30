@@ -5,7 +5,7 @@ A forge of smashing godel-incompleteness into an epsilon size fraction of the sp
 
 API will be something like...
 
-public interface Lambda implements Comparable<Lambda>{
+public interface Lambda implements Comparable < Lambda > {
     public Number integer(); //finite but low polynomial (and big nonscaleable) cost, mostly for math proofs
 }
   
@@ -13,5 +13,5 @@ public class FuncParamReturn{
    public final Lambda func, param, ret;
 }
 
-//use Map<FuncParamReturn,Double> or bloomFilter of FuncParamReturn->[isCertainlyTrue, isCertainlyFalse] or bloomFilter of unorderedPair([funcX,funcY])->[isCertainlyTrue, isCertainlyFalse], etc, to converge in p2p network toward together optimized computing of [func,param,return] and dedup of lambdas, gradually removing paradoxes from the network based on the perfect godel-like numbering of functions of a type that are slightly lower cardinality than turingComplete (aka slightly lower cardinality than exponential of NP) and greater cardinality than exponential of BQP... is my first guess of how to describe the cardinalities.
+//use Map<FuncParamReturn,Double> or bloomFilter of FuncParamReturn -> [isCertainlyTrue, isCertainlyFalse] or bloomFilter of unorderedPair([funcX,funcY])->[isCertainlyTrue, isCertainlyFalse], etc, to converge in p2p network toward together optimized computing of [func,param,return] and dedup of lambdas, gradually removing paradoxes from the network based on the perfect godel-like numbering of functions of a type that are slightly lower cardinality than turingComplete (aka slightly lower cardinality than exponential of NP) and greater cardinality than exponential of BQP... is my first guess of how to describe the cardinalities.
  
