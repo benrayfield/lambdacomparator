@@ -51,3 +51,36 @@ similar to that AIXI is a math model of intelligence but to actually use it cost
 and despite that there are some very weak approximations. 
 */
 public interface Lambda extends Comparable<Lambda>, UnaryOperator<Lambda>
+
+NumInts = quantity of positive integers. This is not itself an integer but is a statement somehow related to cardinality. Cardinality is a part of math that I've never fully understood or believed in, likely cuz its not entirely consistent.
+
+//funcallCache[func][param][return][numComputeCyclesBeforeReturn_plusSomeSmallConstant_Or1IfReturns1][twoBitsForIsItCertainlyTrueOrCertainlyFalse]
+//funcallCache is a 4 dimensional bloomFilter with 2 bits in each cell. Those bits are 00 for unknown, 10 or 01 for false or true (todo opposite order?), and are never 11 (error, but if 11 occurs then fork the peer to peer approximation of this bloom filter so that 11 doesnt occur).
+funcallCache = bit[NumInts][NumInts][NumInts][NumInts][2];
+
+Statements are of the form: func called on param returns ret in numComputeCycles unoptimized compute cycles.
+funcallCache contains every such possible statement, both a claim that its true, claim that its false, or lack of either claim.
+
+A statement can not be negated, such as it is NOT true that (x y)->z. You can only say (x y)->z in c cycles for any positive integers x y z c. This is more limited than godel numbering and halting oracles etc.
+
+A statement can be represented as a negative integer in some ordering of the 5d infinite size array such as cantor diagonals or hex digits with a high 1 bit (except excluding any duplicates im not too sure about that one) or any encoding you like (TODO choose one).
+
+Every statement is certainly false or certainly true, but that doesnt mean you know it.
+
+For every false statement, there exists a negative integer which disproves it in finite time.
+For every x y, there is a statement that x called on y never halts.
+For every x y c r, there is a statement that x called on y returns r in c compute cycles (plus small constant so 1 is the nonhalter). If c is infinity, then c is 1. 1 is the normalized form of all nonhalting lambda calls.
+
+For every x y, there exists exactly 1 true statement of the form x y c r which are some 4 positive integers.
+
+If a call is claimed to never halt but thats false, it can be disproven in finite time by emulating each next compute step which eventually halts.
+
+If a call is claimed to never halt and thats true, then it cant be disproven. It is still true that each false statement can be disproven in finite time (per false statement).
+
+If a call is claimed to halt a certain way (returns r in c compute cycles) and that is true, it can not be disproven.
+
+If a call is claimed to halt a certain way (returns r in c compute cycles) and that is false, it can be disproven in finite time by either finding what it does halt on before c cycles or finding that after c emulated cycles it has not halted.
+
+Therefore all false statements can be proven false in finite time, and no true statements can be disproven, and no statements exist about proving the truth or falseness of statements which godel tangles and so on.
+
+Therefore in the 5d matrix of bits, of infinite size in each of 4 dimensions and size 2 in the other, the constraints allow for only 1 possible bit value in each 5d cell, and if we sample from the powerset of all such possible 5d matrixs and converge this for up to every finite time (but not up to any infinite time, kind of epsilon distance below that), every such possible matrix except 1 is disproven, and it is my belief that the world around us is the only one which could not be disproven because it just happened to contain all possible true statements and no false statements, or more practically that as many such approximate converging sparse matrixs partially overlap, they are, in theory, hill-climbable out of every local energy minimum with no saddlepoints, concavity, but the space of all turing complete possibilities is so huge that you could get lost in near equal directions for a very long time.
