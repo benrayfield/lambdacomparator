@@ -15,3 +15,39 @@ public class FuncParamReturn{
 
 //use Map<FuncParamReturn,Double> or bloomFilter of FuncParamReturn -> [isCertainlyTrue, isCertainlyFalse] or bloomFilter of unorderedPair([funcX,funcY])->[isCertainlyTrue, isCertainlyFalse], etc, to converge in p2p network toward together optimized computing of [func,param,return] and dedup of lambdas, gradually removing paradoxes from the network based on the perfect godel-like numbering of functions of a type that are slightly lower cardinality than turingComplete (aka slightly lower cardinality than exponential of NP) and greater cardinality than exponential of BQP... is my first guess of how to describe the cardinalities.
  
+
+ 
+This is 1 of the lambdas/integers of an infinitely perfect 1-to-1 mapping between positive integers and
+every possible lambda function (by its behaviors only, including others behaviors when called on it),
+where you can always in finite time convert between integer and lambda.
+It is a pure math function of (integer,integer)->integer which is well defined for every positive integer
+called on every positive integer and every such pair returns a positive integer
+if you have infinite time to wait to see if it halts or not
+and if it does not halt then it returns 1 and it does halt then it returns an integer greater than 1.
+Examples: (1,1)->1. (1,anything)->1. (anything,1)->1. (2,2)->3.
+2 is the universalFunc. 3 is the universalFunc called on itself.
+There is some integer which represents the exact value of pi, for example,
+as a function of (some encoding of) integer to bit (true or false).
+One possible encoding of integers is a linkedlist of true or false.
+Pair, true, false, and identityFunc are very small integers, and so are lispCons, lispCar, lispCdr, lispNil.
+This system is capable of turing-complete compression of anything, in theory, such as that sound thats
+like an "optical illusion" that has a constant average frequency but keeps sounding like its decreasing in frequency
+due to a bunch of notes fading in at higher frequency and gradually lowering in frequency while fading out
+of amplitude over time shaped similar to a bellcurve.
+Such compression could be done by mixing a representation of binary forest
+(how many nodes back is my left and my right child, or how many bytes back, etc)
+with a prefix that means to start a literal bitstring of a powOf2 size, in lambdas
+represented as a complete binary tree of true or false at its leafs padded by true/1 then falses/0s until the next powOf2
+to represent a bitstring of any length. This AIXI level of generality of compression
+would be a data format but not the algorithm to find better compressions unless you have exponential time
+to loop over them all up to a certain bit length OR if you have a really smart AI.
+You could even, in theory, compress a superintelligent AI by referring to testcases of its intelligence
+and to loop over all possible AIs and return the first one that passes all the testcases
+BUT the cost of decompressing it would be exponential, so even though you could know for sure
+that what you have is a compressed file containing a superintelligent AI,
+you would not be able to practically decompress it or know anything about it other than
+that it is the first one in the defined loop that passes all those testcases you gave,
+similar to that AIXI is a math model of intelligence but to actually use it cost exponential or maybe up to infinite time,
+and despite that there are some very weak approximations. 
+*/
+public interface Lambda extends Comparable<Lambda>, UnaryOperator<Lambda>
